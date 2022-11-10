@@ -1,0 +1,1 @@
+# stroppa_vendita_di_biglietti
