@@ -28,16 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label_username = new System.Windows.Forms.Label();
-            this.Password = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.conferma_btn = new System.Windows.Forms.Button();
             this.button_A1 = new System.Windows.Forms.Button();
             this.button_A2 = new System.Windows.Forms.Button();
             this.button_A3 = new System.Windows.Forms.Button();
@@ -86,109 +76,13 @@
             this.label_luogo = new System.Windows.Forms.Label();
             this.btn_ACQUISTA = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.label_pselzionato = new System.Windows.Forms.Label();
-            this.numero_btn = new System.Windows.Forms.Label();
             this.Procedi_btn = new System.Windows.Forms.Button();
-            this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
+            this.numero_btn = new System.Windows.Forms.Label();
+            this.label_pselzionato = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(12, 12);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(190, 265);
-            this.panel1.TabIndex = 0;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(58, 156);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "REGISTRATI";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(58, 93);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "ACCEDI";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(58, 33);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(67, 15);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Benvenuto!";
-            // 
-            // label_username
-            // 
-            this.label_username.AutoSize = true;
-            this.label_username.Location = new System.Drawing.Point(20, 46);
-            this.label_username.Name = "label_username";
-            this.label_username.Size = new System.Drawing.Size(60, 15);
-            this.label_username.TabIndex = 3;
-            this.label_username.Text = "Username";
-            // 
-            // Password
-            // 
-            this.Password.AutoSize = true;
-            this.Password.Location = new System.Drawing.Point(20, 100);
-            this.Password.Name = "Password";
-            this.Password.Size = new System.Drawing.Size(57, 15);
-            this.Password.TabIndex = 4;
-            this.Password.Text = "Password";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(20, 64);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(138, 23);
-            this.textBox1.TabIndex = 6;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(20, 118);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(138, 23);
-            this.textBox2.TabIndex = 7;
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.conferma_btn);
-            this.panel2.Controls.Add(this.label_username);
-            this.panel2.Controls.Add(this.textBox2);
-            this.panel2.Controls.Add(this.Password);
-            this.panel2.Controls.Add(this.textBox1);
-            this.panel2.Location = new System.Drawing.Point(261, 12);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(190, 265);
-            this.panel2.TabIndex = 8;
-            this.panel2.Visible = false;
-            // 
-            // conferma_btn
-            // 
-            this.conferma_btn.Location = new System.Drawing.Point(50, 156);
-            this.conferma_btn.Name = "conferma_btn";
-            this.conferma_btn.Size = new System.Drawing.Size(83, 23);
-            this.conferma_btn.TabIndex = 8;
-            this.conferma_btn.Text = "CONFERMA";
-            this.conferma_btn.UseVisualStyleBackColor = true;
-            this.conferma_btn.Click += new System.EventHandler(this.conferma_btn_Click);
             // 
             // button_A1
             // 
@@ -199,6 +93,7 @@
             this.button_A1.TabIndex = 9;
             this.button_A1.Text = "A1";
             this.button_A1.UseVisualStyleBackColor = false;
+            this.button_A1.Click += new System.EventHandler(this.button_A1_Click);
             // 
             // button_A2
             // 
@@ -209,6 +104,7 @@
             this.button_A2.TabIndex = 10;
             this.button_A2.Text = "A2";
             this.button_A2.UseVisualStyleBackColor = false;
+            this.button_A2.Click += new System.EventHandler(this.button_A2_Click);
             // 
             // button_A3
             // 
@@ -219,6 +115,7 @@
             this.button_A3.TabIndex = 11;
             this.button_A3.Text = "A3";
             this.button_A3.UseVisualStyleBackColor = false;
+            this.button_A3.Click += new System.EventHandler(this.button_A3_Click);
             // 
             // button_A4
             // 
@@ -229,6 +126,7 @@
             this.button_A4.TabIndex = 12;
             this.button_A4.Text = "A4";
             this.button_A4.UseVisualStyleBackColor = false;
+            this.button_A4.Click += new System.EventHandler(this.button_A4_Click);
             // 
             // button_A5
             // 
@@ -239,6 +137,7 @@
             this.button_A5.TabIndex = 13;
             this.button_A5.Text = "A5";
             this.button_A5.UseVisualStyleBackColor = false;
+            this.button_A5.Click += new System.EventHandler(this.button_A5_Click);
             // 
             // button_A6
             // 
@@ -249,6 +148,7 @@
             this.button_A6.TabIndex = 14;
             this.button_A6.Text = "A6";
             this.button_A6.UseVisualStyleBackColor = false;
+            this.button_A6.Click += new System.EventHandler(this.button_A6_Click);
             // 
             // button_A7
             // 
@@ -259,6 +159,7 @@
             this.button_A7.TabIndex = 15;
             this.button_A7.Text = "A7";
             this.button_A7.UseVisualStyleBackColor = false;
+            this.button_A7.Click += new System.EventHandler(this.button_A7_Click);
             // 
             // button_A8
             // 
@@ -269,6 +170,7 @@
             this.button_A8.TabIndex = 16;
             this.button_A8.Text = "A8";
             this.button_A8.UseVisualStyleBackColor = false;
+            this.button_A8.Click += new System.EventHandler(this.button_A8_Click);
             // 
             // button_B2
             // 
@@ -279,6 +181,7 @@
             this.button_B2.TabIndex = 17;
             this.button_B2.Text = "B2";
             this.button_B2.UseVisualStyleBackColor = false;
+            this.button_B2.Click += new System.EventHandler(this.button_B2_Click);
             // 
             // button_B1
             // 
@@ -289,6 +192,7 @@
             this.button_B1.TabIndex = 18;
             this.button_B1.Text = "B1";
             this.button_B1.UseVisualStyleBackColor = false;
+            this.button_B1.Click += new System.EventHandler(this.button_B1_Click);
             // 
             // button_B3
             // 
@@ -299,6 +203,7 @@
             this.button_B3.TabIndex = 19;
             this.button_B3.Text = "B3";
             this.button_B3.UseVisualStyleBackColor = false;
+            this.button_B3.Click += new System.EventHandler(this.button_B3_Click);
             // 
             // button_B4
             // 
@@ -309,6 +214,7 @@
             this.button_B4.TabIndex = 20;
             this.button_B4.Text = "B4";
             this.button_B4.UseVisualStyleBackColor = false;
+            this.button_B4.Click += new System.EventHandler(this.button_B4_Click);
             // 
             // button_B5
             // 
@@ -319,6 +225,7 @@
             this.button_B5.TabIndex = 21;
             this.button_B5.Text = "B5";
             this.button_B5.UseVisualStyleBackColor = false;
+            this.button_B5.Click += new System.EventHandler(this.button_B5_Click);
             // 
             // button_B6
             // 
@@ -329,6 +236,7 @@
             this.button_B6.TabIndex = 22;
             this.button_B6.Text = "B6";
             this.button_B6.UseVisualStyleBackColor = false;
+            this.button_B6.Click += new System.EventHandler(this.button_B6_Click);
             // 
             // button_B7
             // 
@@ -339,6 +247,7 @@
             this.button_B7.TabIndex = 23;
             this.button_B7.Text = "B7";
             this.button_B7.UseVisualStyleBackColor = false;
+            this.button_B7.Click += new System.EventHandler(this.button_B7_Click);
             // 
             // button_C1
             // 
@@ -349,6 +258,7 @@
             this.button_C1.TabIndex = 24;
             this.button_C1.Text = "C1";
             this.button_C1.UseVisualStyleBackColor = false;
+            this.button_C1.Click += new System.EventHandler(this.button_C1_Click);
             // 
             // button_C2
             // 
@@ -359,6 +269,7 @@
             this.button_C2.TabIndex = 25;
             this.button_C2.Text = "C2";
             this.button_C2.UseVisualStyleBackColor = false;
+            this.button_C2.Click += new System.EventHandler(this.button_C2_Click);
             // 
             // button_C3
             // 
@@ -369,6 +280,7 @@
             this.button_C3.TabIndex = 26;
             this.button_C3.Text = "C3";
             this.button_C3.UseVisualStyleBackColor = false;
+            this.button_C3.Click += new System.EventHandler(this.button_C3_Click);
             // 
             // button_C4
             // 
@@ -379,6 +291,7 @@
             this.button_C4.TabIndex = 27;
             this.button_C4.Text = "C4";
             this.button_C4.UseVisualStyleBackColor = false;
+            this.button_C4.Click += new System.EventHandler(this.button_C4_Click);
             // 
             // button_C5
             // 
@@ -389,6 +302,7 @@
             this.button_C5.TabIndex = 28;
             this.button_C5.Text = "C5";
             this.button_C5.UseVisualStyleBackColor = false;
+            this.button_C5.Click += new System.EventHandler(this.button_C5_Click);
             // 
             // button_C6
             // 
@@ -399,6 +313,7 @@
             this.button_C6.TabIndex = 29;
             this.button_C6.Text = "C6";
             this.button_C6.UseVisualStyleBackColor = false;
+            this.button_C6.Click += new System.EventHandler(this.button_C6_Click);
             // 
             // button_D1
             // 
@@ -409,6 +324,7 @@
             this.button_D1.TabIndex = 30;
             this.button_D1.Text = "D1";
             this.button_D1.UseVisualStyleBackColor = false;
+            this.button_D1.Click += new System.EventHandler(this.button_D1_Click);
             // 
             // button_D2
             // 
@@ -419,6 +335,7 @@
             this.button_D2.TabIndex = 31;
             this.button_D2.Text = "D2";
             this.button_D2.UseVisualStyleBackColor = false;
+            this.button_D2.Click += new System.EventHandler(this.button_D2_Click);
             // 
             // button_D3
             // 
@@ -429,6 +346,7 @@
             this.button_D3.TabIndex = 32;
             this.button_D3.Text = "D3";
             this.button_D3.UseVisualStyleBackColor = false;
+            this.button_D3.Click += new System.EventHandler(this.button_D3_Click);
             // 
             // button_D4
             // 
@@ -439,6 +357,7 @@
             this.button_D4.TabIndex = 33;
             this.button_D4.Text = "D4";
             this.button_D4.UseVisualStyleBackColor = false;
+            this.button_D4.Click += new System.EventHandler(this.button_D4_Click);
             // 
             // button_D5
             // 
@@ -449,6 +368,7 @@
             this.button_D5.TabIndex = 34;
             this.button_D5.Text = "D5";
             this.button_D5.UseVisualStyleBackColor = false;
+            this.button_D5.Click += new System.EventHandler(this.button_D5_Click);
             // 
             // button_E1
             // 
@@ -459,6 +379,7 @@
             this.button_E1.TabIndex = 35;
             this.button_E1.Text = "E1";
             this.button_E1.UseVisualStyleBackColor = false;
+            this.button_E1.Click += new System.EventHandler(this.button_E1_Click);
             // 
             // button_E2
             // 
@@ -469,6 +390,7 @@
             this.button_E2.TabIndex = 36;
             this.button_E2.Text = "E2";
             this.button_E2.UseVisualStyleBackColor = false;
+            this.button_E2.Click += new System.EventHandler(this.button_E2_Click);
             // 
             // button_E3
             // 
@@ -479,6 +401,7 @@
             this.button_E3.TabIndex = 37;
             this.button_E3.Text = "E3";
             this.button_E3.UseVisualStyleBackColor = false;
+            this.button_E3.Click += new System.EventHandler(this.button_E3_Click);
             // 
             // button_E4
             // 
@@ -489,6 +412,7 @@
             this.button_E4.TabIndex = 38;
             this.button_E4.Text = "E4";
             this.button_E4.UseVisualStyleBackColor = false;
+            this.button_E4.Click += new System.EventHandler(this.button_E4_Click);
             // 
             // button_F1
             // 
@@ -499,6 +423,7 @@
             this.button_F1.TabIndex = 39;
             this.button_F1.Text = "F1";
             this.button_F1.UseVisualStyleBackColor = false;
+            this.button_F1.Click += new System.EventHandler(this.button_F1_Click);
             // 
             // button_F2
             // 
@@ -509,6 +434,7 @@
             this.button_F2.TabIndex = 40;
             this.button_F2.Text = "F2";
             this.button_F2.UseVisualStyleBackColor = false;
+            this.button_F2.Click += new System.EventHandler(this.button_F2_Click);
             // 
             // button_F3
             // 
@@ -519,6 +445,7 @@
             this.button_F3.TabIndex = 41;
             this.button_F3.Text = "F3";
             this.button_F3.UseVisualStyleBackColor = false;
+            this.button_F3.Click += new System.EventHandler(this.button_F3_Click);
             // 
             // button_G1
             // 
@@ -529,6 +456,7 @@
             this.button_G1.TabIndex = 42;
             this.button_G1.Text = "G1";
             this.button_G1.UseVisualStyleBackColor = false;
+            this.button_G1.Click += new System.EventHandler(this.button_G1_Click);
             // 
             // button_G2
             // 
@@ -539,6 +467,7 @@
             this.button_G2.TabIndex = 43;
             this.button_G2.Text = "G2";
             this.button_G2.UseVisualStyleBackColor = false;
+            this.button_G2.Click += new System.EventHandler(this.button_G2_Click);
             // 
             // button_H1
             // 
@@ -550,6 +479,7 @@
             this.button_H1.TabIndex = 44;
             this.button_H1.Text = "H1";
             this.button_H1.UseVisualStyleBackColor = false;
+            this.button_H1.Click += new System.EventHandler(this.button_H1_Click);
             // 
             // label_tf
             // 
@@ -681,11 +611,39 @@
             this.panel3.Controls.Add(this.button_D2);
             this.panel3.Controls.Add(this.button_D4);
             this.panel3.Controls.Add(this.button_D3);
-            this.panel3.Location = new System.Drawing.Point(511, 12);
+            this.panel3.Location = new System.Drawing.Point(12, 12);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(324, 282);
             this.panel3.TabIndex = 56;
-            this.panel3.Visible = false;
+            // 
+            // Procedi_btn
+            // 
+            this.Procedi_btn.Enabled = false;
+            this.Procedi_btn.Location = new System.Drawing.Point(186, 8);
+            this.Procedi_btn.Name = "Procedi_btn";
+            this.Procedi_btn.Size = new System.Drawing.Size(75, 23);
+            this.Procedi_btn.TabIndex = 60;
+            this.Procedi_btn.Text = "--->";
+            this.Procedi_btn.UseVisualStyleBackColor = true;
+            this.Procedi_btn.Click += new System.EventHandler(this.Procedi_btn_Click);
+            // 
+            // numero_btn
+            // 
+            this.numero_btn.AutoSize = true;
+            this.numero_btn.Location = new System.Drawing.Point(142, 12);
+            this.numero_btn.Name = "numero_btn";
+            this.numero_btn.Size = new System.Drawing.Size(38, 15);
+            this.numero_btn.TabIndex = 59;
+            this.numero_btn.Text = "label3";
+            // 
+            // label_pselzionato
+            // 
+            this.label_pselzionato.AutoSize = true;
+            this.label_pselzionato.Location = new System.Drawing.Point(39, 12);
+            this.label_pselzionato.Name = "label_pselzionato";
+            this.label_pselzionato.Size = new System.Drawing.Size(102, 15);
+            this.label_pselzionato.TabIndex = 58;
+            this.label_pselzionato.Text = "Posto selezionato:";
             // 
             // panel4
             // 
@@ -700,57 +658,24 @@
             this.panel4.Controls.Add(this.textBox_ddn);
             this.panel4.Controls.Add(this.textBox_nome);
             this.panel4.Controls.Add(this.label_ddn);
-            this.panel4.Location = new System.Drawing.Point(884, 12);
+            this.panel4.Location = new System.Drawing.Point(342, 12);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(315, 282);
             this.panel4.TabIndex = 57;
             this.panel4.Visible = false;
-            // 
-            // label_pselzionato
-            // 
-            this.label_pselzionato.AutoSize = true;
-            this.label_pselzionato.Location = new System.Drawing.Point(39, 12);
-            this.label_pselzionato.Name = "label_pselzionato";
-            this.label_pselzionato.Size = new System.Drawing.Size(102, 15);
-            this.label_pselzionato.TabIndex = 58;
-            this.label_pselzionato.Text = "Posto selezionato:";
-            // 
-            // numero_btn
-            // 
-            this.numero_btn.AutoSize = true;
-            this.numero_btn.Location = new System.Drawing.Point(142, 12);
-            this.numero_btn.Name = "numero_btn";
-            this.numero_btn.Size = new System.Drawing.Size(38, 15);
-            this.numero_btn.TabIndex = 59;
-            this.numero_btn.Text = "label3";
-            // 
-            // Procedi_btn
-            // 
-            this.Procedi_btn.Location = new System.Drawing.Point(186, 8);
-            this.Procedi_btn.Name = "Procedi_btn";
-            this.Procedi_btn.Size = new System.Drawing.Size(75, 23);
-            this.Procedi_btn.TabIndex = 60;
-            this.Procedi_btn.Text = "--->";
-            this.Procedi_btn.UseVisualStyleBackColor = true;
-            this.Procedi_btn.Click += new System.EventHandler(this.Procedi_btn_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.ClientSize = new System.Drawing.Size(1256, 564);
+            this.ClientSize = new System.Drawing.Size(675, 311);
             this.Controls.Add(this.panel4);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel3);
+            this.MinimumSize = new System.Drawing.Size(691, 350);
             this.Name = "Form1";
-            this.Text = "l.n  ù";
+            this.Text = "Client";
             this.Load += new System.EventHandler(this.Form1_Load);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
@@ -760,17 +685,6 @@
         }
 
         #endregion
-
-        private Panel panel1;
-        private Button button2;
-        private Button button1;
-        private Label label1;
-        private Label label_username;
-        private Label Password;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private Panel panel2;
-        private Button conferma_btn;
         private Button button_A1;
         private Button button_A2;
         private Button button_A3;

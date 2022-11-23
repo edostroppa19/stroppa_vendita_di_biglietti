@@ -6,5 +6,7 @@ namespace Server
         {
             InitializeComponent();
         }
+
+       
     }
 }
