@@ -6,7 +6,7 @@ using System.Text;
 public class SynchronousSocketClient
 {
 
-    public static void StartClient()
+    public void StartClient()
     {
         // Data buffer for incoming data.  
         byte[] bytes = new byte[1024];
@@ -37,8 +37,7 @@ public class SynchronousSocketClient
                 while (data != "Quit$")
                 {
                     stringa_da_inviare = "Messaggio di prova$";
-                    if (stringa_casuale.Next(0, 10) > 8 && count > 15)
-                        stringa_da_inviare = "Quit$";
+                   
                     byte[] msg = Encoding.ASCII.GetBytes(stringa_da_inviare);              //("This is a test<EOF>");
 
                     // Send the data through the socket.  
@@ -51,7 +50,6 @@ public class SynchronousSocketClient
                         data += Encoding.ASCII.GetString(bytes, 0, bytesRec);
                     }
                     Console.WriteLine("Messaggio ricevuto: " + data);
-                    System.Threading.Thread.Sleep(1000);
                     count++;
                 }
                 // Release the socket.
@@ -79,11 +77,5 @@ public class SynchronousSocketClient
         }
     }
 
-   /* public static int Main(String[] args)
-    {
-        StartClient();
-        Console.WriteLine("Premere un tasto per continuare ");
-        Console.ReadLine();
-        return 0;
-    }*/
+  
 }

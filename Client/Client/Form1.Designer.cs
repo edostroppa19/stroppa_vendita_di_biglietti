@@ -80,6 +80,9 @@
             this.numero_btn = new System.Windows.Forms.Label();
             this.label_pselzionato = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.posto_txt = new System.Windows.Forms.TextBox();
+            this.Posto_lb = new System.Windows.Forms.Label();
+            this.avvio = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             this.SuspendLayout();
@@ -484,7 +487,7 @@
             // label_tf
             // 
             this.label_tf.AutoSize = true;
-            this.label_tf.Location = new System.Drawing.Point(10, 38);
+            this.label_tf.Location = new System.Drawing.Point(10, 52);
             this.label_tf.Name = "label_tf";
             this.label_tf.Size = new System.Drawing.Size(96, 15);
             this.label_tf.TabIndex = 45;
@@ -492,14 +495,14 @@
             // 
             // textBox_tf
             // 
-            this.textBox_tf.Location = new System.Drawing.Point(10, 56);
+            this.textBox_tf.Location = new System.Drawing.Point(10, 72);
             this.textBox_tf.Name = "textBox_tf";
             this.textBox_tf.Size = new System.Drawing.Size(182, 23);
             this.textBox_tf.TabIndex = 46;
             // 
             // textBox_cognome
             // 
-            this.textBox_cognome.Location = new System.Drawing.Point(10, 100);
+            this.textBox_cognome.Location = new System.Drawing.Point(10, 116);
             this.textBox_cognome.Name = "textBox_cognome";
             this.textBox_cognome.Size = new System.Drawing.Size(182, 23);
             this.textBox_cognome.TabIndex = 48;
@@ -507,7 +510,7 @@
             // label_cognome
             // 
             this.label_cognome.AutoSize = true;
-            this.label_cognome.Location = new System.Drawing.Point(10, 82);
+            this.label_cognome.Location = new System.Drawing.Point(10, 98);
             this.label_cognome.Name = "label_cognome";
             this.label_cognome.Size = new System.Drawing.Size(60, 15);
             this.label_cognome.TabIndex = 47;
@@ -515,7 +518,7 @@
             // 
             // textBox_nome
             // 
-            this.textBox_nome.Location = new System.Drawing.Point(10, 147);
+            this.textBox_nome.Location = new System.Drawing.Point(10, 160);
             this.textBox_nome.Name = "textBox_nome";
             this.textBox_nome.Size = new System.Drawing.Size(182, 23);
             this.textBox_nome.TabIndex = 50;
@@ -523,7 +526,7 @@
             // label_nome
             // 
             this.label_nome.AutoSize = true;
-            this.label_nome.Location = new System.Drawing.Point(10, 129);
+            this.label_nome.Location = new System.Drawing.Point(10, 142);
             this.label_nome.Name = "label_nome";
             this.label_nome.Size = new System.Drawing.Size(40, 15);
             this.label_nome.TabIndex = 49;
@@ -531,7 +534,7 @@
             // 
             // textBox_ddn
             // 
-            this.textBox_ddn.Location = new System.Drawing.Point(10, 197);
+            this.textBox_ddn.Location = new System.Drawing.Point(10, 203);
             this.textBox_ddn.Name = "textBox_ddn";
             this.textBox_ddn.Size = new System.Drawing.Size(182, 23);
             this.textBox_ddn.TabIndex = 52;
@@ -539,7 +542,7 @@
             // label_ddn
             // 
             this.label_ddn.AutoSize = true;
-            this.label_ddn.Location = new System.Drawing.Point(10, 179);
+            this.label_ddn.Location = new System.Drawing.Point(10, 185);
             this.label_ddn.Name = "label_ddn";
             this.label_ddn.Size = new System.Drawing.Size(84, 15);
             this.label_ddn.TabIndex = 51;
@@ -547,7 +550,7 @@
             // 
             // textBox_luogo
             // 
-            this.textBox_luogo.Location = new System.Drawing.Point(10, 241);
+            this.textBox_luogo.Location = new System.Drawing.Point(10, 247);
             this.textBox_luogo.Name = "textBox_luogo";
             this.textBox_luogo.Size = new System.Drawing.Size(182, 23);
             this.textBox_luogo.TabIndex = 54;
@@ -555,7 +558,7 @@
             // label_luogo
             // 
             this.label_luogo.AutoSize = true;
-            this.label_luogo.Location = new System.Drawing.Point(10, 223);
+            this.label_luogo.Location = new System.Drawing.Point(10, 229);
             this.label_luogo.Name = "label_luogo";
             this.label_luogo.Size = new System.Drawing.Size(41, 15);
             this.label_luogo.TabIndex = 53;
@@ -569,6 +572,7 @@
             this.btn_ACQUISTA.TabIndex = 55;
             this.btn_ACQUISTA.Text = "ACQUISTA";
             this.btn_ACQUISTA.UseVisualStyleBackColor = true;
+            this.btn_ACQUISTA.Click += new System.EventHandler(this.btn_ACQUISTA_Click);
             // 
             // panel3
             // 
@@ -611,10 +615,11 @@
             this.panel3.Controls.Add(this.button_D2);
             this.panel3.Controls.Add(this.button_D4);
             this.panel3.Controls.Add(this.button_D3);
-            this.panel3.Location = new System.Drawing.Point(12, 12);
+            this.panel3.Location = new System.Drawing.Point(82, 12);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(324, 282);
             this.panel3.TabIndex = 56;
+            this.panel3.Visible = false;
             // 
             // Procedi_btn
             // 
@@ -647,6 +652,8 @@
             // 
             // panel4
             // 
+            this.panel4.Controls.Add(this.posto_txt);
+            this.panel4.Controls.Add(this.Posto_lb);
             this.panel4.Controls.Add(this.label_tf);
             this.panel4.Controls.Add(this.textBox_tf);
             this.panel4.Controls.Add(this.btn_ACQUISTA);
@@ -658,24 +665,51 @@
             this.panel4.Controls.Add(this.textBox_ddn);
             this.panel4.Controls.Add(this.textBox_nome);
             this.panel4.Controls.Add(this.label_ddn);
-            this.panel4.Location = new System.Drawing.Point(342, 12);
+            this.panel4.Location = new System.Drawing.Point(412, 12);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(315, 282);
             this.panel4.TabIndex = 57;
             this.panel4.Visible = false;
+            // 
+            // posto_txt
+            // 
+            this.posto_txt.Location = new System.Drawing.Point(10, 26);
+            this.posto_txt.Name = "posto_txt";
+            this.posto_txt.ReadOnly = true;
+            this.posto_txt.Size = new System.Drawing.Size(182, 23);
+            this.posto_txt.TabIndex = 60;
+            // 
+            // Posto_lb
+            // 
+            this.Posto_lb.AutoSize = true;
+            this.Posto_lb.Location = new System.Drawing.Point(10, 8);
+            this.Posto_lb.Name = "Posto_lb";
+            this.Posto_lb.Size = new System.Drawing.Size(37, 15);
+            this.Posto_lb.TabIndex = 59;
+            this.Posto_lb.Text = "Posto";
+            // 
+            // avvio
+            // 
+            this.avvio.Location = new System.Drawing.Point(1, 12);
+            this.avvio.Name = "avvio";
+            this.avvio.Size = new System.Drawing.Size(75, 282);
+            this.avvio.TabIndex = 58;
+            this.avvio.Text = "avvio";
+            this.avvio.UseVisualStyleBackColor = true;
+            this.avvio.Click += new System.EventHandler(this.avvio_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.ClientSize = new System.Drawing.Size(675, 311);
+            this.ClientSize = new System.Drawing.Size(809, 311);
+            this.Controls.Add(this.avvio);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
-            this.MinimumSize = new System.Drawing.Size(691, 350);
+            this.MinimumSize = new System.Drawing.Size(825, 350);
             this.Name = "Form1";
             this.Text = "Client";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
@@ -734,8 +768,11 @@
         private Button btn_ACQUISTA;
         private Panel panel3;
         private Panel panel4;
-        private Button Procedi_btn;
         private Label numero_btn;
         private Label label_pselzionato;
+        private Button Procedi_btn;
+        private Button avvio;
+        private TextBox posto_txt;
+        private Label Posto_lb;
     }
 }

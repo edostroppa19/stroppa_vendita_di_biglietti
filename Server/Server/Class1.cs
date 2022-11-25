@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
@@ -7,9 +8,15 @@ public class SynchronousSocketListener
 {
 
     // Incoming data from the client.  
-    public static string data = null;
+    public string data=null;
 
-    public static void StartListening()
+
+    public SynchronousSocketListener(ref string data)
+    {
+        this.data = data;
+    }
+
+    public  void StartListening()
     {
         // Data buffer for incoming data.  
         byte[] bytes = new Byte[1024];
@@ -37,12 +44,12 @@ public class SynchronousSocketListener
             while (true)
             {
 
-                Console.WriteLine("Waiting for a connection...");
+                Debug.WriteLine("Waiting for a connection...");
                 // Program is suspended while waiting for an incoming connection.  
                 Socket handler = listener.Accept();
 
-                while (data != "Quit$")
-                {
+                //while (data != "Quit$")
+                //{
                     // An incoming connection needs to be processed.  
                     data = "";
                     while (data.IndexOf("$") == -1)
@@ -51,14 +58,16 @@ public class SynchronousSocketListener
                         data += Encoding.ASCII.GetString(bytes, 0, bytesRec);
                     }
 
-                    // Show the data on the console.  
-                    Console.WriteLine("Messaggio ricevuto : {0}", data);
+                // Show the data on the console. 
+                string[] info = data.Split();
+                
+                    Debug.WriteLine("Messaggio ricevuto : {0}", data);
 
                     // Echo the data back to the client.  
                     byte[] msg = Encoding.ASCII.GetBytes(data);
 
                     handler.Send(msg);
-                }
+               // }
                 handler.Shutdown(SocketShutdown.Both);
                 handler.Close();
                 data = "";
@@ -73,11 +82,5 @@ public class SynchronousSocketListener
         Console.WriteLine("\nPress ENTER to continue...");
         Console.Read();
 
-    }
-
-    public static int Main(String[] args)
-    {
-        StartListening();
-        return 0;
     }
 }
