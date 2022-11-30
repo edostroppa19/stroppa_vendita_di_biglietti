@@ -44,14 +44,40 @@ public class SynchronousSocketListener
                     data += Encoding.ASCII.GetString(bytes, 0, bytesRec);
                 }
                 byte[] msg;
-                    string[] info = data.Split();
-                    Debug.WriteLine(data);
-                    data = data.Replace('$', ' ');
-                    MessageBox.Show(data);
-                    if (form.Ospiti.IsHandleCreated)
-                        form.Ospiti.Invoke(new Action(() => form.Ospiti.Items.Add(data))); 
-                    msg = Encoding.ASCII.GetBytes(data);
-        
+                if (data != "OCCUPATI$")
+              {
+                // Show the data on the console. 
+                string[] info = data.Split();
+                Debug.WriteLine(data);
+                data = data.Replace('$', ' ');
+                MessageBox.Show(data);
+                if (form.Ospiti.IsHandleCreated)
+                    form.Ospiti.Invoke(new Action(() => form.Ospiti.Items.Add(data)));
+                // Echo the data back to the client.  
+                msg = Encoding.ASCII.GetBytes(data);
+                 }
+                 else
+                  {
+                      string postiOccupati = "";
+                      if (form.Ospiti.IsHandleCreated)
+                      {
+                          form.Ospiti.Invoke(new Action(() =>
+                          {
+                              if (form.Ospiti.Items.Count > 0)
+                                  for (int i = 0; i < form.Ospiti.Items.Count; i++)
+                                      postiOccupati += Convert.ToString(form.Ospiti.Items[i]) + "?";
+                              else
+                                  postiOccupati = "Vuoto$";
+                          }));
+                      }
+                      msg = Encoding.ASCII.GetBytes(postiOccupati);
+                  }
+                  
+
+                // handler.Send(msg);
+                // }
+                //    handler.Shutdown(SocketShutdown.Both);
+                //// handler.Close();
                 data = "";
             }
 

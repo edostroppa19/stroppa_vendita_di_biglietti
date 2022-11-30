@@ -22,7 +22,18 @@ namespace Client
         {
             panel3.Visible = true;
             avvio.Visible = false;
-          
+            string msg = "OCCUPATI$";
+            byte[] bytes = Encoding.UTF8.GetBytes(msg);
+            Clsender.Send(bytes);
+            string data = "";
+            byte[] res = new byte[1024];
+            while (data.IndexOf("$") == -1)
+            {
+                int bytesRec = Clsender.Receive(res);
+                data += Encoding.ASCII.GetString(res, 0, bytesRec);
+            }
+            MessageBox.Show(data);
+
         }
        
         public void bottoni(Button s)
