@@ -8,21 +8,12 @@ public class SynchronousSocketClient
 
     public void InviadatiClient(ref Socket sender,TextBox posto_txt)
     {
-        // Data buffer for incoming data.  
         byte[] bytes = new byte[1024];
         int count = 0;
-
-        // Connect to a remote device.  
         try
         {
             string data = "";
-            
-
-            // Create a TCP/IP  socket.  
-            
             string stringa_da_inviare = posto_txt.Text + "$";
-
-            // Connect the socket to the remote endpoint. Catch any errors.  
             try
             {
                 Console.WriteLine("Socket connected to {0}",
@@ -30,12 +21,9 @@ public class SynchronousSocketClient
                 while (data != "Quit$")
                 {
 
-                    byte[] msg = Encoding.ASCII.GetBytes(stringa_da_inviare);              //("This is a test<EOF>");
-
-                    // Send the data through the socket.  
+                    byte[] msg = Encoding.ASCII.GetBytes(stringa_da_inviare); 
                     int bytesSent = sender.Send(msg);
                     data = "";
-                    // Receive the response from the remote device.  
                     while (data.IndexOf("$") == -1)
                     {
                         int bytesRec = sender.Receive(bytes);
@@ -43,10 +31,8 @@ public class SynchronousSocketClient
                     }
                     Console.WriteLine("Messaggio ricevuto: " + data);
                 }
-                // Release the socket.
                 sender.Shutdown(SocketShutdown.Both);
-                //     sender.Close();
-
+               
             }
             catch (ArgumentNullException ane)
             {

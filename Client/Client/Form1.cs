@@ -7,28 +7,22 @@ namespace Client
 {
     public partial class Form1 : Form
     {
-        private Socket sender;
+        private Socket Clsender;
         private TextBox p;
         public TextBox pst { set { p = value; }get { return p; } }
         public Form1()
         {
             InitializeComponent();
-            // Establish the remote endpoint for the socket.  
-            // This example uses port 11000 on the local computer.  
             IPAddress ipAddress = System.Net.IPAddress.Parse("127.0.0.1");
             IPEndPoint remoteEP = new IPEndPoint(ipAddress, 5000);
-            sender = new Socket(ipAddress.AddressFamily, SocketType.Stream, ProtocolType.Tcp);
-            sender.Connect(remoteEP);
+            Clsender = new Socket(ipAddress.AddressFamily, SocketType.Stream, ProtocolType.Tcp);
+            Clsender.Connect(remoteEP);
         }
         private void avvio_Click(object sender, EventArgs e)
         {
-            //SynchronousSocketClient client = new SynchronousSocketClient();
-            //client.StartClient();
             panel3.Visible = true;
             avvio.Visible = false;
-            string msg = "OCCUPATI$";
-            byte[] bytes = Encoding.UTF8.GetBytes(msg);
-
+          
         }
        
         public void bottoni(Button s)
@@ -228,7 +222,7 @@ namespace Client
         private void btn_ACQUISTA_Click(object senderr, EventArgs ee)
         {
             SynchronousSocketClient client = new SynchronousSocketClient();
-                client.InviadatiClient(ref sender,posto_txt);
+                client.InviadatiClient(ref Clsender,posto_txt);
         }
     }
 }
