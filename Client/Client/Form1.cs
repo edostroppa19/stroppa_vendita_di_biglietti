@@ -7,9 +7,18 @@ namespace Client
 {
     public partial class Form1 : Form
     {
+        private Socket sender;
+        private TextBox p;
+        public TextBox pst { set { p = value; }get { return p; } }
         public Form1()
         {
             InitializeComponent();
+            // Establish the remote endpoint for the socket.  
+            // This example uses port 11000 on the local computer.  
+            IPAddress ipAddress = System.Net.IPAddress.Parse("127.0.0.1");
+            IPEndPoint remoteEP = new IPEndPoint(ipAddress, 5000);
+            sender = new Socket(ipAddress.AddressFamily, SocketType.Stream, ProtocolType.Tcp);
+            sender.Connect(remoteEP);
         }
         private void avvio_Click(object sender, EventArgs e)
         {
@@ -17,17 +26,17 @@ namespace Client
             //client.StartClient();
             panel3.Visible = true;
             avvio.Visible = false;
+            string msg = "OCCUPATI$";
+            byte[] bytes = Encoding.UTF8.GetBytes(msg);
+
         }
-        private void Procedi_btn_Click(object sender, EventArgs e)
-        {
-            panel3.Visible=false;
-            panel4.Visible = true;
-        }
+       
         public void bottoni(Button s)
         {
             numero_btn.Text = s.Text;
             posto_txt.Text = s.Text;
-            Procedi_btn.Enabled = true;
+            panel3.Visible = false;
+            panel4.Visible = true;
             s.BackColor = Color.Yellow;
             s.Enabled = false;
         }
@@ -217,69 +226,9 @@ namespace Client
         }
 
         private void btn_ACQUISTA_Click(object senderr, EventArgs ee)
-        { // Data buffer for incoming data.  
-            byte[] bytes = new byte[1024];
-            int count = 0;
-
-            // Connect to a remote device.  
-            try
-            {
-                string data = "";
-                // Establish the remote endpoint for the socket.  
-                // This example uses port 11000 on the local computer.  
-                IPAddress ipAddress = System.Net.IPAddress.Parse("127.0.0.1");
-                IPEndPoint remoteEP = new IPEndPoint(ipAddress, 5000);
-
-                // Create a TCP/IP  socket.  
-                Socket sender = new Socket(ipAddress.AddressFamily, SocketType.Stream, ProtocolType.Tcp);
-                string stringa_da_inviare = posto_txt.Text+"$";
-
-                // Connect the socket to the remote endpoint. Catch any errors.  
-                try
-                {
-                    sender.Connect(remoteEP);
-
-                    Console.WriteLine("Socket connected to {0}",
-                        sender.RemoteEndPoint.ToString());
-                    while (data != "Quit$")
-                    {
-
-                        byte[] msg = Encoding.ASCII.GetBytes(stringa_da_inviare);              //("This is a test<EOF>");
-
-                        // Send the data through the socket.  
-                        int bytesSent = sender.Send(msg);
-                        data = "";
-                        // Receive the response from the remote device.  
-                        while (data.IndexOf("$") == -1)
-                        {
-                            int bytesRec = sender.Receive(bytes);
-                            data += Encoding.ASCII.GetString(bytes, 0, bytesRec);
-                        }
-                        Console.WriteLine("Messaggio ricevuto: " + data);
-                    }
-                    // Release the socket.
-                    sender.Shutdown(SocketShutdown.Both);
-                    sender.Close();
-
-                }
-                catch (ArgumentNullException ane)
-                {
-                    Console.WriteLine("ArgumentNullException : {0}", ane.ToString());
-                }
-                catch (SocketException se)
-                {
-                    Console.WriteLine("SocketException : {0}", se.ToString());
-                }
-                catch (Exception e)
-                {
-                    Console.WriteLine("Unexpected exception : {0}", e.ToString());
-                }
-
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e.ToString());
-            }
+        {
+            SynchronousSocketClient client = new SynchronousSocketClient();
+                client.InviadatiClient(ref sender,posto_txt);
         }
     }
 }

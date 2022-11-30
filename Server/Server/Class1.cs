@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Server;
+using System;
 using System.Diagnostics;
 using System.Net;
 using System.Net.Sockets;
@@ -8,7 +9,7 @@ public class SynchronousSocketListener
 {
 
     // Incoming data from the client.  
-    public string data=null;
+    public string data = null;
 
 
     public SynchronousSocketListener(ref string data)
@@ -16,8 +17,9 @@ public class SynchronousSocketListener
         this.data = data;
     }
 
-    public  void StartListening()
+    public void StartListening(object o)
     {
+        Server.Server form = o as Server.Server;
         // Data buffer for incoming data.  
         byte[] bytes = new Byte[1024];
 
@@ -50,26 +52,28 @@ public class SynchronousSocketListener
 
                 //while (data != "Quit$")
                 //{
-                    // An incoming connection needs to be processed.  
-                    data = "";
-                    while (data.IndexOf("$") == -1)
-                    {
-                        int bytesRec = handler.Receive(bytes);
-                        data += Encoding.ASCII.GetString(bytes, 0, bytesRec);
-                    }
+                // An incoming connection needs to be processed.  
+                data = "";
+                while (data.IndexOf("$") == -1)
+                {
+                    int bytesRec = handler.Receive(bytes);
+                    data += Encoding.ASCII.GetString(bytes, 0, bytesRec);
+                }
 
                 // Show the data on the console. 
                 string[] info = data.Split();
-                
-                    Debug.WriteLine("Messaggio ricevuto : {0}", data);
+                Debug.WriteLine(data);
+                data = data.Replace('$', ' ');
+                MessageBox.Show(data);
+                if (form.Ospiti.IsHandleCreated)
+                form.Ospiti.Invoke(new Action(() => form.Ospiti.Items.Add(data)));
+                // Echo the data back to the client.  
+                byte[] msg = Encoding.ASCII.GetBytes(data);
 
-                    // Echo the data back to the client.  
-                    byte[] msg = Encoding.ASCII.GetBytes(data);
-
-                    handler.Send(msg);
-               // }
+                handler.Send(msg);
+                // }
                 handler.Shutdown(SocketShutdown.Both);
-                handler.Close();
+              //  handler.Close();
                 data = "";
             }
 

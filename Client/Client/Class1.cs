@@ -6,7 +6,7 @@ using System.Text;
 public class SynchronousSocketClient
 {
 
-    public void StartClient()
+    public void InviadatiClient(ref Socket sender,TextBox posto_txt)
     {
         // Data buffer for incoming data.  
         byte[] bytes = new byte[1024];
@@ -16,28 +16,20 @@ public class SynchronousSocketClient
         try
         {
             string data = "";
-            // Establish the remote endpoint for the socket.  
-            // This example uses port 11000 on the local computer.  
-            IPAddress ipAddress = System.Net.IPAddress.Parse("127.0.0.1");
-            IPEndPoint remoteEP = new IPEndPoint(ipAddress, 5000);
+            
 
             // Create a TCP/IP  socket.  
-            Socket sender = new Socket(ipAddress.AddressFamily,
-                SocketType.Stream, ProtocolType.Tcp);
-            Random stringa_casuale = new Random();
-            string stringa_da_inviare = "";
+            
+            string stringa_da_inviare = posto_txt.Text + "$";
 
             // Connect the socket to the remote endpoint. Catch any errors.  
             try
             {
-                sender.Connect(remoteEP);
-
                 Console.WriteLine("Socket connected to {0}",
                     sender.RemoteEndPoint.ToString());
                 while (data != "Quit$")
                 {
-                    stringa_da_inviare = "Messaggio di prova$";
-                   
+
                     byte[] msg = Encoding.ASCII.GetBytes(stringa_da_inviare);              //("This is a test<EOF>");
 
                     // Send the data through the socket.  
@@ -50,11 +42,10 @@ public class SynchronousSocketClient
                         data += Encoding.ASCII.GetString(bytes, 0, bytesRec);
                     }
                     Console.WriteLine("Messaggio ricevuto: " + data);
-                    count++;
                 }
                 // Release the socket.
                 sender.Shutdown(SocketShutdown.Both);
-                sender.Close();
+                //     sender.Close();
 
             }
             catch (ArgumentNullException ane)
@@ -76,6 +67,4 @@ public class SynchronousSocketClient
             Console.WriteLine(e.ToString());
         }
     }
-
-  
 }

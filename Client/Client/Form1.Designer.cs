@@ -76,7 +76,6 @@
             this.label_luogo = new System.Windows.Forms.Label();
             this.btn_ACQUISTA = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.Procedi_btn = new System.Windows.Forms.Button();
             this.numero_btn = new System.Windows.Forms.Label();
             this.label_pselzionato = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -576,7 +575,6 @@
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.Procedi_btn);
             this.panel3.Controls.Add(this.numero_btn);
             this.panel3.Controls.Add(this.label_pselzionato);
             this.panel3.Controls.Add(this.button_A1);
@@ -620,17 +618,6 @@
             this.panel3.Size = new System.Drawing.Size(324, 282);
             this.panel3.TabIndex = 56;
             this.panel3.Visible = false;
-            // 
-            // Procedi_btn
-            // 
-            this.Procedi_btn.Enabled = false;
-            this.Procedi_btn.Location = new System.Drawing.Point(186, 8);
-            this.Procedi_btn.Name = "Procedi_btn";
-            this.Procedi_btn.Size = new System.Drawing.Size(75, 23);
-            this.Procedi_btn.TabIndex = 60;
-            this.Procedi_btn.Text = "--->";
-            this.Procedi_btn.UseVisualStyleBackColor = true;
-            this.Procedi_btn.Click += new System.EventHandler(this.Procedi_btn_Click);
             // 
             // numero_btn
             // 
@@ -770,7 +757,6 @@
         private Panel panel4;
         private Label numero_btn;
         private Label label_pselzionato;
-        private Button Procedi_btn;
         private Button avvio;
         private TextBox posto_txt;
         private Label Posto_lb;
