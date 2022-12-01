@@ -8,7 +8,6 @@ using System.Windows.Forms;
 
 public class SynchronousSocketListener
 {
-
     // Incoming data from the client.  
     public string data = null;
 
@@ -20,7 +19,7 @@ public class SynchronousSocketListener
 
     public void StartListening(object o)
     {
-        Server.Server form = o as Server.Server;
+        //Server.Server form = o as Server.Server;
         byte[] bytes = new Byte[1024];
         IPAddress ipAddress = System.Net.IPAddress.Parse("127.0.0.1");
         IPEndPoint localEndPoint = new IPEndPoint(ipAddress, 5000);  
@@ -32,61 +31,80 @@ public class SynchronousSocketListener
         {
             listener.Bind(localEndPoint);
             listener.Listen(10);
+            Socket handler;
+
             while (true)
             {
+                handler = listener.Accept();
+                gestioneClient gestore = new gestioneClient(handler);
+                Thread tc = new Thread(new ParameterizedThreadStart(gestore.gclient));
+                tc.Start(o);
+            }
+        }
+        catch (SocketException se)
+        {
+            Console.WriteLine(se.ToString());
+        }
+    }
 
-                Debug.WriteLine("Waiting for a connection...");
-                Socket handler = listener.Accept();
-                data = "";
-                while (data.IndexOf("$") == -1)
-                {
-                    int bytesRec = handler.Receive(bytes);
-                    data += Encoding.ASCII.GetString(bytes, 0, bytesRec);
-                }
-                byte[] msg;
-                if (data != "OCCUPATI$")
-              {
-                // Show the data on the console. 
+    
+       
+}
+
+public class gestioneClient
+{
+    Socket handler;
+
+    public gestioneClient(Socket ServerHandler)
+    {
+        handler = ServerHandler;
+    }
+    public void gclient(object Form)
+    {
+        Server.Server form = Form as Server.Server;
+        string data = "";
+        byte[] bytes = new byte[1024];
+        while (data != "-X-")
+        {
+
+            Debug.WriteLine("Waiting for a connection...");
+
+
+            while (data.IndexOf("$") == -1)
+            {
+                int bytesRec = handler.Receive(bytes);
+                data += Encoding.ASCII.GetString(bytes, 0, bytesRec);
+            }
+            byte[] msg;
+            if (data != "OCCUPATI$")
+            {
                 string[] info = data.Split();
                 Debug.WriteLine(data);
                 data = data.Replace('$', ' ');
-                MessageBox.Show(data);
                 if (form.Ospiti.IsHandleCreated)
                     form.Ospiti.Invoke(new Action(() => form.Ospiti.Items.Add(data)));
-                // Echo the data back to the client.  
                 msg = Encoding.ASCII.GetBytes(data);
-                 }
-                 else
-                  {
-                      string postiOccupati = "";
-                      if (form.Ospiti.IsHandleCreated)
-                      {
-                          form.Ospiti.Invoke(new Action(() =>
-                          {
-                              if (form.Ospiti.Items.Count > 0)
-                                  for (int i = 0; i < form.Ospiti.Items.Count; i++)
-                                      postiOccupati += Convert.ToString(form.Ospiti.Items[i]) + "?";
-                              else
-                                  postiOccupati = "Vuoto$";
-                          }));
-                      }
-                      msg = Encoding.ASCII.GetBytes(postiOccupati);
-                  }
-                  
-
-                // handler.Send(msg);
-                // }
-                //    handler.Shutdown(SocketShutdown.Both);
-                //// handler.Close();
-                data = "";
             }
-
+            else
+            {
+                string postiOccupati = "";
+                if (form.Ospiti.IsHandleCreated)
+                {
+                    form.Ospiti.Invoke(new Action(() =>
+                    {
+                        if (form.Ospiti.Items.Count > 0)
+                            for (int i = 0; i < form.Ospiti.Items.Count; i++)
+                                postiOccupati += Convert.ToString(form.Ospiti.Items[i]).Split("|")[0] + "|";
+                        else 
+                            postiOccupati = "Vuoto";
+                        postiOccupati += "$";
+                    }));
+                }
+                msg = Encoding.ASCII.GetBytes(postiOccupati);
+                handler.Send(msg);
+            }
+            data = "";
         }
-        catch (Exception e)
-        {
-            Console.WriteLine(e.ToString());
-        }
-
         Console.WriteLine("\nPress ENTER to continue...");
         Console.Read();
 

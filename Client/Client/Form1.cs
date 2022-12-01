@@ -9,6 +9,8 @@ namespace Client
     {
         private Socket Clsender;
         private TextBox p;
+        private persona persona;
+        private List<Button> bottoniLista;
         public TextBox pst { set { p = value; }get { return p; } }
         public Form1()
         {
@@ -17,6 +19,7 @@ namespace Client
             IPEndPoint remoteEP = new IPEndPoint(ipAddress, 5000);
             Clsender = new Socket(ipAddress.AddressFamily, SocketType.Stream, ProtocolType.Tcp);
             Clsender.Connect(remoteEP);
+            
         }
         private void avvio_Click(object sender, EventArgs e)
         {
@@ -32,10 +35,35 @@ namespace Client
                 int bytesRec = Clsender.Receive(res);
                 data += Encoding.ASCII.GetString(res, 0, bytesRec);
             }
+            
+            data =  data.Substring(0, data.IndexOf("$"));
             MessageBox.Show(data);
+            string[] postiOccupati = data.Split("|");
+
+            if (postiOccupati.Length > 0 && postiOccupati[0] != "Vuoto")
+            {
+                foreach (Control c in Controls)
+                {
+                    if (c.GetType() ==typeof(Button))
+                    foreach (string bottone in postiOccupati)
+                    {
+                        MessageBox.Show(c.Name +"-" + "button_" + bottone);
+                        Control[] botton = this.Controls.Find("button_" + bottone, true);
+                        botton[0].BackColor = Color.Yellow;
+                    }
+                }
+                
+            }
+            
+
 
         }
-       
+       public void passaggio_textbox(string cognome,string nome, string luogo, string data_di_nascita)
+        {
+             persona = new persona();
+            persona.setPersona(nome,cognome,luogo,data_di_nascita);
+
+        }
         public void bottoni(Button s)
         {
             numero_btn.Text = s.Text;
@@ -45,7 +73,6 @@ namespace Client
             s.BackColor = Color.Yellow;
             s.Enabled = false;
         }
-
         private void button_A1_Click(object sender, EventArgs e)
         {
             bottoni(button_A1);
@@ -232,8 +259,11 @@ namespace Client
 
         private void btn_ACQUISTA_Click(object senderr, EventArgs ee)
         {
+            passaggio_textbox(textBox_nome.Text, textBox_cognome.Text, textBox_ddn.Text, textBox_luogo.Text);
+            string info = persona.getnome() + " " + persona.getcognome() + " " + 
+                    persona.getluogo() + " " + persona.getdata_di_nascita();
             SynchronousSocketClient client = new SynchronousSocketClient();
-                client.InviadatiClient(ref Clsender,posto_txt);
+                client.InviadatiClient(ref Clsender,posto_txt,info);
         }
     }
 }

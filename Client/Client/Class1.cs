@@ -6,14 +6,14 @@ using System.Text;
 public class SynchronousSocketClient
 {
 
-    public void InviadatiClient(ref Socket sender,TextBox posto_txt)
+    public void InviadatiClient(ref Socket sender,TextBox posto_txt,string info_persona)
     {
         byte[] bytes = new byte[1024];
         int count = 0;
         try
         {
             string data = "";
-            string stringa_da_inviare = posto_txt.Text + "$";
+            string stringa_da_inviare = posto_txt.Text + "|" + info_persona + "$";
             try
             {
                 Console.WriteLine("Socket connected to {0}",

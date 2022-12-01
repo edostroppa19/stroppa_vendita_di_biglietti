@@ -64,8 +64,6 @@
             this.button_G1 = new System.Windows.Forms.Button();
             this.button_G2 = new System.Windows.Forms.Button();
             this.button_H1 = new System.Windows.Forms.Button();
-            this.label_tf = new System.Windows.Forms.Label();
-            this.textBox_tf = new System.Windows.Forms.TextBox();
             this.textBox_cognome = new System.Windows.Forms.TextBox();
             this.label_cognome = new System.Windows.Forms.Label();
             this.textBox_nome = new System.Windows.Forms.TextBox();
@@ -483,25 +481,9 @@
             this.button_H1.UseVisualStyleBackColor = false;
             this.button_H1.Click += new System.EventHandler(this.button_H1_Click);
             // 
-            // label_tf
-            // 
-            this.label_tf.AutoSize = true;
-            this.label_tf.Location = new System.Drawing.Point(10, 52);
-            this.label_tf.Name = "label_tf";
-            this.label_tf.Size = new System.Drawing.Size(96, 15);
-            this.label_tf.TabIndex = 45;
-            this.label_tf.Text = "Tessera del tifoso";
-            // 
-            // textBox_tf
-            // 
-            this.textBox_tf.Location = new System.Drawing.Point(10, 72);
-            this.textBox_tf.Name = "textBox_tf";
-            this.textBox_tf.Size = new System.Drawing.Size(182, 23);
-            this.textBox_tf.TabIndex = 46;
-            // 
             // textBox_cognome
             // 
-            this.textBox_cognome.Location = new System.Drawing.Point(10, 116);
+            this.textBox_cognome.Location = new System.Drawing.Point(10, 99);
             this.textBox_cognome.Name = "textBox_cognome";
             this.textBox_cognome.Size = new System.Drawing.Size(182, 23);
             this.textBox_cognome.TabIndex = 48;
@@ -509,7 +491,7 @@
             // label_cognome
             // 
             this.label_cognome.AutoSize = true;
-            this.label_cognome.Location = new System.Drawing.Point(10, 98);
+            this.label_cognome.Location = new System.Drawing.Point(10, 81);
             this.label_cognome.Name = "label_cognome";
             this.label_cognome.Size = new System.Drawing.Size(60, 15);
             this.label_cognome.TabIndex = 47;
@@ -517,7 +499,7 @@
             // 
             // textBox_nome
             // 
-            this.textBox_nome.Location = new System.Drawing.Point(10, 160);
+            this.textBox_nome.Location = new System.Drawing.Point(10, 143);
             this.textBox_nome.Name = "textBox_nome";
             this.textBox_nome.Size = new System.Drawing.Size(182, 23);
             this.textBox_nome.TabIndex = 50;
@@ -525,7 +507,7 @@
             // label_nome
             // 
             this.label_nome.AutoSize = true;
-            this.label_nome.Location = new System.Drawing.Point(10, 142);
+            this.label_nome.Location = new System.Drawing.Point(10, 125);
             this.label_nome.Name = "label_nome";
             this.label_nome.Size = new System.Drawing.Size(40, 15);
             this.label_nome.TabIndex = 49;
@@ -533,7 +515,7 @@
             // 
             // textBox_ddn
             // 
-            this.textBox_ddn.Location = new System.Drawing.Point(10, 203);
+            this.textBox_ddn.Location = new System.Drawing.Point(10, 186);
             this.textBox_ddn.Name = "textBox_ddn";
             this.textBox_ddn.Size = new System.Drawing.Size(182, 23);
             this.textBox_ddn.TabIndex = 52;
@@ -541,7 +523,7 @@
             // label_ddn
             // 
             this.label_ddn.AutoSize = true;
-            this.label_ddn.Location = new System.Drawing.Point(10, 185);
+            this.label_ddn.Location = new System.Drawing.Point(10, 168);
             this.label_ddn.Name = "label_ddn";
             this.label_ddn.Size = new System.Drawing.Size(84, 15);
             this.label_ddn.TabIndex = 51;
@@ -549,7 +531,7 @@
             // 
             // textBox_luogo
             // 
-            this.textBox_luogo.Location = new System.Drawing.Point(10, 247);
+            this.textBox_luogo.Location = new System.Drawing.Point(10, 230);
             this.textBox_luogo.Name = "textBox_luogo";
             this.textBox_luogo.Size = new System.Drawing.Size(182, 23);
             this.textBox_luogo.TabIndex = 54;
@@ -557,7 +539,7 @@
             // label_luogo
             // 
             this.label_luogo.AutoSize = true;
-            this.label_luogo.Location = new System.Drawing.Point(10, 229);
+            this.label_luogo.Location = new System.Drawing.Point(10, 212);
             this.label_luogo.Name = "label_luogo";
             this.label_luogo.Size = new System.Drawing.Size(41, 15);
             this.label_luogo.TabIndex = 53;
@@ -641,8 +623,6 @@
             // 
             this.panel4.Controls.Add(this.posto_txt);
             this.panel4.Controls.Add(this.Posto_lb);
-            this.panel4.Controls.Add(this.label_tf);
-            this.panel4.Controls.Add(this.textBox_tf);
             this.panel4.Controls.Add(this.btn_ACQUISTA);
             this.panel4.Controls.Add(this.label_cognome);
             this.panel4.Controls.Add(this.textBox_luogo);
@@ -660,7 +640,7 @@
             // 
             // posto_txt
             // 
-            this.posto_txt.Location = new System.Drawing.Point(10, 26);
+            this.posto_txt.Location = new System.Drawing.Point(10, 60);
             this.posto_txt.Name = "posto_txt";
             this.posto_txt.ReadOnly = true;
             this.posto_txt.Size = new System.Drawing.Size(182, 23);
@@ -669,7 +649,7 @@
             // Posto_lb
             // 
             this.Posto_lb.AutoSize = true;
-            this.Posto_lb.Location = new System.Drawing.Point(10, 8);
+            this.Posto_lb.Location = new System.Drawing.Point(10, 42);
             this.Posto_lb.Name = "Posto_lb";
             this.Posto_lb.Size = new System.Drawing.Size(37, 15);
             this.Posto_lb.TabIndex = 59;
@@ -742,8 +722,6 @@
         private Button button_G1;
         private Button button_G2;
         private Button button_H1;
-        private Label label_tf;
-        private TextBox textBox_tf;
         private TextBox textBox_cognome;
         private Label label_cognome;
         private TextBox textBox_nome;
