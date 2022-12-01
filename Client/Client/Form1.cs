@@ -37,7 +37,6 @@ namespace Client
             }
             
             data =  data.Substring(0, data.IndexOf("$"));
-            MessageBox.Show(data);
             string[] postiOccupati = data.Split("|");
 
             if (postiOccupati.Length > 0 && postiOccupati[0] != "Vuoto")
@@ -47,10 +46,10 @@ namespace Client
                     if (c.GetType() ==typeof(Button))
                     foreach (string bottone in postiOccupati)
                     {
-                        MessageBox.Show(c.Name +"-" + "button_" + bottone);
                         Control[] botton = this.Controls.Find("button_" + bottone, true);
                         botton[0].BackColor = Color.Yellow;
-                    }
+                        botton[0].Enabled = false;
+                        }
                 }
                 
             }
@@ -70,8 +69,6 @@ namespace Client
             posto_txt.Text = s.Text;
             panel3.Visible = false;
             panel4.Visible = true;
-            s.BackColor = Color.Yellow;
-            s.Enabled = false;
         }
         private void button_A1_Click(object sender, EventArgs e)
         {
