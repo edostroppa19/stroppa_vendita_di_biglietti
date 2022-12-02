@@ -490,6 +490,7 @@
             this.textBox_cognome.Name = "textBox_cognome";
             this.textBox_cognome.Size = new System.Drawing.Size(182, 23);
             this.textBox_cognome.TabIndex = 48;
+            this.textBox_cognome.TextChanged += new System.EventHandler(this.textBox_cognome_TextChanged);
             this.textBox_cognome.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_cognome_KeyPress);
             // 
             // label_cognome
@@ -508,6 +509,7 @@
             this.textBox_nome.Name = "textBox_nome";
             this.textBox_nome.Size = new System.Drawing.Size(182, 23);
             this.textBox_nome.TabIndex = 50;
+            this.textBox_nome.TextChanged += new System.EventHandler(this.textBox_nome_TextChanged);
             this.textBox_nome.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_nome_KeyPress);
             // 
             // label_nome
@@ -543,6 +545,7 @@
             // btn_ACQUISTA
             // 
             this.btn_ACQUISTA.BackColor = System.Drawing.Color.White;
+            this.btn_ACQUISTA.Enabled = false;
             this.btn_ACQUISTA.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_ACQUISTA.Location = new System.Drawing.Point(220, 38);
             this.btn_ACQUISTA.Name = "btn_ACQUISTA";

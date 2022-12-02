@@ -24,6 +24,7 @@ namespace Client
         }
         private void avvio_Click(object sender, EventArgs e)
         {
+            
             try
             {
                 panel3.Visible = true;
@@ -283,25 +284,8 @@ namespace Client
             SynchronousSocketClient client = new SynchronousSocketClient();
                 client.InviadatiClient(ref Clsender,posto_txt,info);
         }
-        private void textBox_cognome_TextChanged(object sender, EventArgs e)
-        {
-            convalida_acquista();
-
-        }
-
-        private void textBox_nome_TextChanged(object sender, EventArgs e)
-        {
-            convalida_acquista();
-        }
-
-        private void textBox_cognome_TextChanged_1(object sender, EventArgs e)
-        {
-            if (!System.Text.RegularExpressions.Regex.IsMatch(textBox_cognome.Text, "^[a-zA-Z]"))
-            {
-                MessageBox.Show("Questa textbox accetta solo lettere");
-                textBox_cognome.Text.Remove(textBox_cognome.Text.Length - 1);
-            }
-        }
+     
+        
 
         private void textBox_cognome_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -325,6 +309,16 @@ namespace Client
             }
             file.Close();
             lista_comuni.Sorted = true;
+        }
+
+        private void textBox_cognome_TextChanged(object sender, EventArgs e)
+        {
+            convalida_acquista();
+        }
+
+        private void textBox_nome_TextChanged(object sender, EventArgs e)
+        {
+            convalida_acquista();
         }
     }
 }
