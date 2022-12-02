@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.button_A1 = new System.Windows.Forms.Button();
             this.button_A2 = new System.Windows.Forms.Button();
             this.button_A3 = new System.Windows.Forms.Button();
@@ -78,14 +79,18 @@
             this.posto_txt = new System.Windows.Forms.TextBox();
             this.Posto_lb = new System.Windows.Forms.Label();
             this.avvio = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // button_A1
             // 
             this.button_A1.BackColor = System.Drawing.Color.Lime;
-            this.button_A1.Location = new System.Drawing.Point(39, 16);
+            this.button_A1.Location = new System.Drawing.Point(32, 34);
             this.button_A1.Name = "button_A1";
             this.button_A1.Size = new System.Drawing.Size(29, 23);
             this.button_A1.TabIndex = 9;
@@ -96,7 +101,7 @@
             // button_A2
             // 
             this.button_A2.BackColor = System.Drawing.Color.Lime;
-            this.button_A2.Location = new System.Drawing.Point(71, 16);
+            this.button_A2.Location = new System.Drawing.Point(64, 34);
             this.button_A2.Name = "button_A2";
             this.button_A2.Size = new System.Drawing.Size(29, 23);
             this.button_A2.TabIndex = 10;
@@ -107,7 +112,7 @@
             // button_A3
             // 
             this.button_A3.BackColor = System.Drawing.Color.Lime;
-            this.button_A3.Location = new System.Drawing.Point(103, 16);
+            this.button_A3.Location = new System.Drawing.Point(96, 34);
             this.button_A3.Name = "button_A3";
             this.button_A3.Size = new System.Drawing.Size(29, 23);
             this.button_A3.TabIndex = 11;
@@ -118,7 +123,7 @@
             // button_A4
             // 
             this.button_A4.BackColor = System.Drawing.Color.Lime;
-            this.button_A4.Location = new System.Drawing.Point(135, 16);
+            this.button_A4.Location = new System.Drawing.Point(128, 34);
             this.button_A4.Name = "button_A4";
             this.button_A4.Size = new System.Drawing.Size(29, 23);
             this.button_A4.TabIndex = 12;
@@ -129,7 +134,7 @@
             // button_A5
             // 
             this.button_A5.BackColor = System.Drawing.Color.Lime;
-            this.button_A5.Location = new System.Drawing.Point(167, 16);
+            this.button_A5.Location = new System.Drawing.Point(160, 34);
             this.button_A5.Name = "button_A5";
             this.button_A5.Size = new System.Drawing.Size(29, 23);
             this.button_A5.TabIndex = 13;
@@ -140,7 +145,7 @@
             // button_A6
             // 
             this.button_A6.BackColor = System.Drawing.Color.Lime;
-            this.button_A6.Location = new System.Drawing.Point(199, 16);
+            this.button_A6.Location = new System.Drawing.Point(192, 34);
             this.button_A6.Name = "button_A6";
             this.button_A6.Size = new System.Drawing.Size(29, 23);
             this.button_A6.TabIndex = 14;
@@ -151,7 +156,7 @@
             // button_A7
             // 
             this.button_A7.BackColor = System.Drawing.Color.Lime;
-            this.button_A7.Location = new System.Drawing.Point(231, 16);
+            this.button_A7.Location = new System.Drawing.Point(224, 34);
             this.button_A7.Name = "button_A7";
             this.button_A7.Size = new System.Drawing.Size(29, 23);
             this.button_A7.TabIndex = 15;
@@ -162,7 +167,7 @@
             // button_A8
             // 
             this.button_A8.BackColor = System.Drawing.Color.Lime;
-            this.button_A8.Location = new System.Drawing.Point(263, 16);
+            this.button_A8.Location = new System.Drawing.Point(256, 34);
             this.button_A8.Name = "button_A8";
             this.button_A8.Size = new System.Drawing.Size(29, 23);
             this.button_A8.TabIndex = 16;
@@ -173,7 +178,7 @@
             // button_B2
             // 
             this.button_B2.BackColor = System.Drawing.Color.Lime;
-            this.button_B2.Location = new System.Drawing.Point(87, 45);
+            this.button_B2.Location = new System.Drawing.Point(80, 63);
             this.button_B2.Name = "button_B2";
             this.button_B2.Size = new System.Drawing.Size(29, 23);
             this.button_B2.TabIndex = 17;
@@ -184,7 +189,7 @@
             // button_B1
             // 
             this.button_B1.BackColor = System.Drawing.Color.Lime;
-            this.button_B1.Location = new System.Drawing.Point(55, 45);
+            this.button_B1.Location = new System.Drawing.Point(48, 63);
             this.button_B1.Name = "button_B1";
             this.button_B1.Size = new System.Drawing.Size(29, 23);
             this.button_B1.TabIndex = 18;
@@ -195,7 +200,7 @@
             // button_B3
             // 
             this.button_B3.BackColor = System.Drawing.Color.Lime;
-            this.button_B3.Location = new System.Drawing.Point(119, 45);
+            this.button_B3.Location = new System.Drawing.Point(112, 63);
             this.button_B3.Name = "button_B3";
             this.button_B3.Size = new System.Drawing.Size(29, 23);
             this.button_B3.TabIndex = 19;
@@ -206,7 +211,7 @@
             // button_B4
             // 
             this.button_B4.BackColor = System.Drawing.Color.Lime;
-            this.button_B4.Location = new System.Drawing.Point(151, 45);
+            this.button_B4.Location = new System.Drawing.Point(144, 63);
             this.button_B4.Name = "button_B4";
             this.button_B4.Size = new System.Drawing.Size(29, 23);
             this.button_B4.TabIndex = 20;
@@ -217,7 +222,7 @@
             // button_B5
             // 
             this.button_B5.BackColor = System.Drawing.Color.Lime;
-            this.button_B5.Location = new System.Drawing.Point(183, 45);
+            this.button_B5.Location = new System.Drawing.Point(176, 63);
             this.button_B5.Name = "button_B5";
             this.button_B5.Size = new System.Drawing.Size(29, 23);
             this.button_B5.TabIndex = 21;
@@ -228,7 +233,7 @@
             // button_B6
             // 
             this.button_B6.BackColor = System.Drawing.Color.Lime;
-            this.button_B6.Location = new System.Drawing.Point(215, 45);
+            this.button_B6.Location = new System.Drawing.Point(208, 63);
             this.button_B6.Name = "button_B6";
             this.button_B6.Size = new System.Drawing.Size(29, 23);
             this.button_B6.TabIndex = 22;
@@ -239,7 +244,7 @@
             // button_B7
             // 
             this.button_B7.BackColor = System.Drawing.Color.Lime;
-            this.button_B7.Location = new System.Drawing.Point(247, 45);
+            this.button_B7.Location = new System.Drawing.Point(240, 63);
             this.button_B7.Name = "button_B7";
             this.button_B7.Size = new System.Drawing.Size(29, 23);
             this.button_B7.TabIndex = 23;
@@ -250,7 +255,7 @@
             // button_C1
             // 
             this.button_C1.BackColor = System.Drawing.Color.Lime;
-            this.button_C1.Location = new System.Drawing.Point(71, 74);
+            this.button_C1.Location = new System.Drawing.Point(64, 92);
             this.button_C1.Name = "button_C1";
             this.button_C1.Size = new System.Drawing.Size(29, 23);
             this.button_C1.TabIndex = 24;
@@ -261,7 +266,7 @@
             // button_C2
             // 
             this.button_C2.BackColor = System.Drawing.Color.Lime;
-            this.button_C2.Location = new System.Drawing.Point(103, 74);
+            this.button_C2.Location = new System.Drawing.Point(96, 92);
             this.button_C2.Name = "button_C2";
             this.button_C2.Size = new System.Drawing.Size(29, 23);
             this.button_C2.TabIndex = 25;
@@ -272,7 +277,7 @@
             // button_C3
             // 
             this.button_C3.BackColor = System.Drawing.Color.Lime;
-            this.button_C3.Location = new System.Drawing.Point(135, 74);
+            this.button_C3.Location = new System.Drawing.Point(128, 92);
             this.button_C3.Name = "button_C3";
             this.button_C3.Size = new System.Drawing.Size(29, 23);
             this.button_C3.TabIndex = 26;
@@ -283,7 +288,7 @@
             // button_C4
             // 
             this.button_C4.BackColor = System.Drawing.Color.Lime;
-            this.button_C4.Location = new System.Drawing.Point(167, 74);
+            this.button_C4.Location = new System.Drawing.Point(160, 92);
             this.button_C4.Name = "button_C4";
             this.button_C4.Size = new System.Drawing.Size(29, 23);
             this.button_C4.TabIndex = 27;
@@ -294,7 +299,7 @@
             // button_C5
             // 
             this.button_C5.BackColor = System.Drawing.Color.Lime;
-            this.button_C5.Location = new System.Drawing.Point(199, 74);
+            this.button_C5.Location = new System.Drawing.Point(192, 92);
             this.button_C5.Name = "button_C5";
             this.button_C5.Size = new System.Drawing.Size(29, 23);
             this.button_C5.TabIndex = 28;
@@ -305,7 +310,7 @@
             // button_C6
             // 
             this.button_C6.BackColor = System.Drawing.Color.Lime;
-            this.button_C6.Location = new System.Drawing.Point(231, 74);
+            this.button_C6.Location = new System.Drawing.Point(224, 92);
             this.button_C6.Name = "button_C6";
             this.button_C6.Size = new System.Drawing.Size(29, 23);
             this.button_C6.TabIndex = 29;
@@ -316,7 +321,7 @@
             // button_D1
             // 
             this.button_D1.BackColor = System.Drawing.Color.Lime;
-            this.button_D1.Location = new System.Drawing.Point(87, 103);
+            this.button_D1.Location = new System.Drawing.Point(80, 121);
             this.button_D1.Name = "button_D1";
             this.button_D1.Size = new System.Drawing.Size(29, 23);
             this.button_D1.TabIndex = 30;
@@ -327,7 +332,7 @@
             // button_D2
             // 
             this.button_D2.BackColor = System.Drawing.Color.Lime;
-            this.button_D2.Location = new System.Drawing.Point(119, 103);
+            this.button_D2.Location = new System.Drawing.Point(112, 121);
             this.button_D2.Name = "button_D2";
             this.button_D2.Size = new System.Drawing.Size(29, 23);
             this.button_D2.TabIndex = 31;
@@ -338,7 +343,7 @@
             // button_D3
             // 
             this.button_D3.BackColor = System.Drawing.Color.Lime;
-            this.button_D3.Location = new System.Drawing.Point(151, 103);
+            this.button_D3.Location = new System.Drawing.Point(144, 121);
             this.button_D3.Name = "button_D3";
             this.button_D3.Size = new System.Drawing.Size(29, 23);
             this.button_D3.TabIndex = 32;
@@ -349,7 +354,7 @@
             // button_D4
             // 
             this.button_D4.BackColor = System.Drawing.Color.Lime;
-            this.button_D4.Location = new System.Drawing.Point(183, 103);
+            this.button_D4.Location = new System.Drawing.Point(176, 121);
             this.button_D4.Name = "button_D4";
             this.button_D4.Size = new System.Drawing.Size(29, 23);
             this.button_D4.TabIndex = 33;
@@ -360,7 +365,7 @@
             // button_D5
             // 
             this.button_D5.BackColor = System.Drawing.Color.Lime;
-            this.button_D5.Location = new System.Drawing.Point(215, 103);
+            this.button_D5.Location = new System.Drawing.Point(208, 121);
             this.button_D5.Name = "button_D5";
             this.button_D5.Size = new System.Drawing.Size(29, 23);
             this.button_D5.TabIndex = 34;
@@ -371,7 +376,7 @@
             // button_E1
             // 
             this.button_E1.BackColor = System.Drawing.Color.Lime;
-            this.button_E1.Location = new System.Drawing.Point(103, 132);
+            this.button_E1.Location = new System.Drawing.Point(96, 150);
             this.button_E1.Name = "button_E1";
             this.button_E1.Size = new System.Drawing.Size(29, 23);
             this.button_E1.TabIndex = 35;
@@ -382,7 +387,7 @@
             // button_E2
             // 
             this.button_E2.BackColor = System.Drawing.Color.Lime;
-            this.button_E2.Location = new System.Drawing.Point(135, 132);
+            this.button_E2.Location = new System.Drawing.Point(128, 150);
             this.button_E2.Name = "button_E2";
             this.button_E2.Size = new System.Drawing.Size(29, 23);
             this.button_E2.TabIndex = 36;
@@ -393,7 +398,7 @@
             // button_E3
             // 
             this.button_E3.BackColor = System.Drawing.Color.Lime;
-            this.button_E3.Location = new System.Drawing.Point(167, 132);
+            this.button_E3.Location = new System.Drawing.Point(160, 150);
             this.button_E3.Name = "button_E3";
             this.button_E3.Size = new System.Drawing.Size(29, 23);
             this.button_E3.TabIndex = 37;
@@ -404,7 +409,7 @@
             // button_E4
             // 
             this.button_E4.BackColor = System.Drawing.Color.Lime;
-            this.button_E4.Location = new System.Drawing.Point(202, 132);
+            this.button_E4.Location = new System.Drawing.Point(195, 150);
             this.button_E4.Name = "button_E4";
             this.button_E4.Size = new System.Drawing.Size(29, 23);
             this.button_E4.TabIndex = 38;
@@ -415,7 +420,7 @@
             // button_F1
             // 
             this.button_F1.BackColor = System.Drawing.Color.Lime;
-            this.button_F1.Location = new System.Drawing.Point(119, 161);
+            this.button_F1.Location = new System.Drawing.Point(112, 179);
             this.button_F1.Name = "button_F1";
             this.button_F1.Size = new System.Drawing.Size(29, 23);
             this.button_F1.TabIndex = 39;
@@ -426,7 +431,7 @@
             // button_F2
             // 
             this.button_F2.BackColor = System.Drawing.Color.Lime;
-            this.button_F2.Location = new System.Drawing.Point(151, 161);
+            this.button_F2.Location = new System.Drawing.Point(144, 179);
             this.button_F2.Name = "button_F2";
             this.button_F2.Size = new System.Drawing.Size(29, 23);
             this.button_F2.TabIndex = 40;
@@ -437,7 +442,7 @@
             // button_F3
             // 
             this.button_F3.BackColor = System.Drawing.Color.Lime;
-            this.button_F3.Location = new System.Drawing.Point(183, 161);
+            this.button_F3.Location = new System.Drawing.Point(176, 179);
             this.button_F3.Name = "button_F3";
             this.button_F3.Size = new System.Drawing.Size(29, 23);
             this.button_F3.TabIndex = 41;
@@ -448,7 +453,7 @@
             // button_G1
             // 
             this.button_G1.BackColor = System.Drawing.Color.Lime;
-            this.button_G1.Location = new System.Drawing.Point(135, 190);
+            this.button_G1.Location = new System.Drawing.Point(128, 208);
             this.button_G1.Name = "button_G1";
             this.button_G1.Size = new System.Drawing.Size(29, 23);
             this.button_G1.TabIndex = 42;
@@ -459,7 +464,7 @@
             // button_G2
             // 
             this.button_G2.BackColor = System.Drawing.Color.Lime;
-            this.button_G2.Location = new System.Drawing.Point(170, 190);
+            this.button_G2.Location = new System.Drawing.Point(163, 208);
             this.button_G2.Name = "button_G2";
             this.button_G2.Size = new System.Drawing.Size(29, 23);
             this.button_G2.TabIndex = 43;
@@ -471,7 +476,7 @@
             // 
             this.button_H1.BackColor = System.Drawing.Color.Lime;
             this.button_H1.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button_H1.Location = new System.Drawing.Point(151, 219);
+            this.button_H1.Location = new System.Drawing.Point(144, 237);
             this.button_H1.Name = "button_H1";
             this.button_H1.Size = new System.Drawing.Size(29, 23);
             this.button_H1.TabIndex = 44;
@@ -490,6 +495,7 @@
             // label_cognome
             // 
             this.label_cognome.AutoSize = true;
+            this.label_cognome.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label_cognome.Location = new System.Drawing.Point(10, 81);
             this.label_cognome.Name = "label_cognome";
             this.label_cognome.Size = new System.Drawing.Size(60, 15);
@@ -507,25 +513,28 @@
             // label_nome
             // 
             this.label_nome.AutoSize = true;
+            this.label_nome.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label_nome.Location = new System.Drawing.Point(10, 125);
             this.label_nome.Name = "label_nome";
-            this.label_nome.Size = new System.Drawing.Size(40, 15);
+            this.label_nome.Size = new System.Drawing.Size(41, 15);
             this.label_nome.TabIndex = 49;
             this.label_nome.Text = "Nome";
             // 
             // label_ddn
             // 
             this.label_ddn.AutoSize = true;
-            this.label_ddn.Location = new System.Drawing.Point(10, 168);
+            this.label_ddn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label_ddn.Location = new System.Drawing.Point(10, 171);
             this.label_ddn.Name = "label_ddn";
-            this.label_ddn.Size = new System.Drawing.Size(84, 15);
+            this.label_ddn.Size = new System.Drawing.Size(87, 15);
             this.label_ddn.TabIndex = 51;
             this.label_ddn.Text = "Data di nascita";
             // 
             // label_luogo
             // 
             this.label_luogo.AutoSize = true;
-            this.label_luogo.Location = new System.Drawing.Point(10, 212);
+            this.label_luogo.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label_luogo.Location = new System.Drawing.Point(10, 216);
             this.label_luogo.Name = "label_luogo";
             this.label_luogo.Size = new System.Drawing.Size(41, 15);
             this.label_luogo.TabIndex = 53;
@@ -533,16 +542,19 @@
             // 
             // btn_ACQUISTA
             // 
-            this.btn_ACQUISTA.Location = new System.Drawing.Point(220, 42);
+            this.btn_ACQUISTA.BackColor = System.Drawing.Color.White;
+            this.btn_ACQUISTA.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_ACQUISTA.Location = new System.Drawing.Point(220, 38);
             this.btn_ACQUISTA.Name = "btn_ACQUISTA";
-            this.btn_ACQUISTA.Size = new System.Drawing.Size(75, 222);
+            this.btn_ACQUISTA.Size = new System.Drawing.Size(75, 226);
             this.btn_ACQUISTA.TabIndex = 55;
             this.btn_ACQUISTA.Text = "ACQUISTA";
-            this.btn_ACQUISTA.UseVisualStyleBackColor = true;
+            this.btn_ACQUISTA.UseVisualStyleBackColor = false;
             this.btn_ACQUISTA.Click += new System.EventHandler(this.btn_ACQUISTA_Click);
             // 
             // panel3
             // 
+            this.panel3.BackgroundImage = global::Client.Properties.Resources.sfondo;
             this.panel3.Controls.Add(this.button_A1);
             this.panel3.Controls.Add(this.button_A2);
             this.panel3.Controls.Add(this.button_A3);
@@ -579,7 +591,7 @@
             this.panel3.Controls.Add(this.button_D2);
             this.panel3.Controls.Add(this.button_D4);
             this.panel3.Controls.Add(this.button_D3);
-            this.panel3.Location = new System.Drawing.Point(82, 12);
+            this.panel3.Location = new System.Drawing.Point(121, 33);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(324, 282);
             this.panel3.TabIndex = 56;
@@ -587,6 +599,7 @@
             // 
             // panel4
             // 
+            this.panel4.BackgroundImage = global::Client.Properties.Resources.tifo_stadi1;
             this.panel4.Controls.Add(this.lista_comuni);
             this.panel4.Controls.Add(this.data_di_nascita);
             this.panel4.Controls.Add(this.posto_txt);
@@ -598,7 +611,7 @@
             this.panel4.Controls.Add(this.label_nome);
             this.panel4.Controls.Add(this.textBox_nome);
             this.panel4.Controls.Add(this.label_ddn);
-            this.panel4.Location = new System.Drawing.Point(412, 12);
+            this.panel4.Location = new System.Drawing.Point(451, 33);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(315, 282);
             this.panel4.TabIndex = 57;
@@ -607,10 +620,11 @@
             // lista_comuni
             // 
             this.lista_comuni.FormattingEnabled = true;
-            this.lista_comuni.Location = new System.Drawing.Point(10, 230);
+            this.lista_comuni.Location = new System.Drawing.Point(10, 237);
             this.lista_comuni.Name = "lista_comuni";
             this.lista_comuni.Size = new System.Drawing.Size(182, 23);
             this.lista_comuni.TabIndex = 62;
+            this.lista_comuni.Text = "ABANO TERME";
             // 
             // data_di_nascita
             // 
@@ -621,7 +635,7 @@
             // 
             // posto_txt
             // 
-            this.posto_txt.Location = new System.Drawing.Point(10, 60);
+            this.posto_txt.Location = new System.Drawing.Point(10, 55);
             this.posto_txt.Name = "posto_txt";
             this.posto_txt.ReadOnly = true;
             this.posto_txt.Size = new System.Drawing.Size(182, 23);
@@ -630,38 +644,80 @@
             // Posto_lb
             // 
             this.Posto_lb.AutoSize = true;
-            this.Posto_lb.Location = new System.Drawing.Point(10, 42);
+            this.Posto_lb.BackColor = System.Drawing.Color.White;
+            this.Posto_lb.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Posto_lb.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.Posto_lb.Location = new System.Drawing.Point(10, 38);
             this.Posto_lb.Name = "Posto_lb";
-            this.Posto_lb.Size = new System.Drawing.Size(37, 15);
+            this.Posto_lb.Size = new System.Drawing.Size(38, 15);
             this.Posto_lb.TabIndex = 59;
             this.Posto_lb.Text = "Posto";
             // 
             // avvio
             // 
-            this.avvio.Location = new System.Drawing.Point(1, 12);
+            this.avvio.BackColor = System.Drawing.Color.Black;
+            this.avvio.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.avvio.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.avvio.Location = new System.Drawing.Point(40, 33);
             this.avvio.Name = "avvio";
             this.avvio.Size = new System.Drawing.Size(75, 282);
             this.avvio.TabIndex = 58;
             this.avvio.Text = "avvio";
-            this.avvio.UseVisualStyleBackColor = true;
+            this.avvio.UseVisualStyleBackColor = false;
             this.avvio.Click += new System.EventHandler(this.avvio_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Black;
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Location = new System.Drawing.Point(40, 1);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(726, 26);
+            this.panel1.TabIndex = 59;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Candara", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label2.Location = new System.Drawing.Point(631, 2);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(69, 24);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "TICKET";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Candara", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label1.Location = new System.Drawing.Point(536, 2);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(92, 24);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "STROPPA";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.ClientSize = new System.Drawing.Size(809, 311);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(809, 321);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.avvio);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
-            this.MinimumSize = new System.Drawing.Size(825, 350);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MinimumSize = new System.Drawing.Size(825, 360);
             this.Name = "Form1";
             this.Text = "Client";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel3.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -717,5 +773,8 @@
         private Label Posto_lb;
         private DateTimePicker data_di_nascita;
         private ComboBox lista_comuni;
+        private Panel panel1;
+        private Label label2;
+        private Label label1;
     }
 }

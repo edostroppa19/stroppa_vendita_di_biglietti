@@ -52,7 +52,7 @@ namespace Client
                                 Control[] botton = this.Controls.Find("button_" + bottone, true);
                                 if (botton != null && botton.Length>0)
                                 {
-                                    botton[0].BackColor = Color.Yellow;
+                                    botton[0].BackColor = Color.Red;
                                     botton[0].Enabled = false;
                                 }
                             }
