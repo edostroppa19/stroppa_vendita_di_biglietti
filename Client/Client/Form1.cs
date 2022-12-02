@@ -1,7 +1,8 @@
 using System.Net.Sockets;
 using System.Net;
-using System.Security.Cryptography.X509Certificates;
+using System.IO;
 using System.Text;
+using System.Diagnostics;
 
 namespace Client
 {
@@ -23,41 +24,62 @@ namespace Client
         }
         private void avvio_Click(object sender, EventArgs e)
         {
-            panel3.Visible = true;
-            avvio.Visible = false;
-            string msg = "OCCUPATI$";
-            byte[] bytes = Encoding.UTF8.GetBytes(msg);
-            Clsender.Send(bytes);
-            string data = "";
-            byte[] res = new byte[1024];
-            while (data.IndexOf("$") == -1)
+            try
             {
-                int bytesRec = Clsender.Receive(res);
-                data += Encoding.ASCII.GetString(res, 0, bytesRec);
+                panel3.Visible = true;
+                avvio.Visible = false;
+                string msg = "OCCUPATI$";
+                byte[] bytes = Encoding.UTF8.GetBytes(msg);
+                Clsender.Send(bytes);
+                string data = "";
+                byte[] res = new byte[1024];
+                while (data.IndexOf("$") == -1)
+                {
+                    int bytesRec = Clsender.Receive(res);
+                    data += Encoding.ASCII.GetString(res, 0, bytesRec);
+                }
+
+                data = data.Substring(0, data.IndexOf("$"));
+                string[] postiOccupati = data.Split("|");
+
+                if (postiOccupati.Length > 0 && postiOccupati[0] != "Vuoto")
+                {
+                    foreach (Control c in Controls)
+                    {
+                        if (c.GetType() == typeof(Button))
+                            foreach (string bottone in postiOccupati)
+                            {
+                                Control[] botton = this.Controls.Find("button_" + bottone, true);
+                                if (botton != null && botton.Length>0)
+                                {
+                                    botton[0].BackColor = Color.Yellow;
+                                    botton[0].Enabled = false;
+                                }
+                            }
+                    }
+
+                }
+            } catch(Exception ) {
+                Debug.WriteLine("");
             }
             
-            data =  data.Substring(0, data.IndexOf("$"));
-            string[] postiOccupati = data.Split("|");
-
-            if (postiOccupati.Length > 0 && postiOccupati[0] != "Vuoto")
-            {
-                foreach (Control c in Controls)
-                {
-                    if (c.GetType() ==typeof(Button))
-                    foreach (string bottone in postiOccupati)
-                    {
-                        Control[] botton = this.Controls.Find("button_" + bottone, true);
-                        botton[0].BackColor = Color.Yellow;
-                        botton[0].Enabled = false;
-                        }
-                }
-                
-            }
             
 
 
         }
-       public void passaggio_textbox(string cognome,string nome, string luogo, string data_di_nascita)
+        public void convalida_acquista()
+        {
+            if (textBox_cognome.Text != "" && textBox_nome.Text != "" && lista_comuni.Text != "")
+            {
+                btn_ACQUISTA.Enabled = true;
+            }
+
+        }
+        public void solo_caratteri_nelle_textbox(TextBox x)
+        {
+            
+        }
+        public void passaggio_textbox(string cognome,string nome, string luogo, string data_di_nascita)
         {
              persona = new persona();
             persona.setPersona(nome,cognome,luogo,data_di_nascita);
@@ -65,7 +87,6 @@ namespace Client
         }
         public void bottoni(Button s)
         {
-            numero_btn.Text = s.Text;
             posto_txt.Text = s.Text;
             panel3.Visible = false;
             panel4.Visible = true;
@@ -256,11 +277,54 @@ namespace Client
 
         private void btn_ACQUISTA_Click(object senderr, EventArgs ee)
         {
-            passaggio_textbox(textBox_nome.Text, textBox_cognome.Text, textBox_ddn.Text, textBox_luogo.Text);
+            passaggio_textbox(textBox_nome.Text, textBox_cognome.Text, data_di_nascita.Text, lista_comuni.Text);
             string info = persona.getnome() + " " + persona.getcognome() + " " + 
                     persona.getluogo() + " " + persona.getdata_di_nascita();
             SynchronousSocketClient client = new SynchronousSocketClient();
                 client.InviadatiClient(ref Clsender,posto_txt,info);
+        }
+        private void textBox_cognome_TextChanged(object sender, EventArgs e)
+        {
+            convalida_acquista();
+
+        }
+
+        private void textBox_nome_TextChanged(object sender, EventArgs e)
+        {
+            convalida_acquista();
+        }
+
+        private void textBox_cognome_TextChanged_1(object sender, EventArgs e)
+        {
+            if (!System.Text.RegularExpressions.Regex.IsMatch(textBox_cognome.Text, "^[a-zA-Z]"))
+            {
+                MessageBox.Show("Questa textbox accetta solo lettere");
+                textBox_cognome.Text.Remove(textBox_cognome.Text.Length - 1);
+            }
+        }
+
+        private void textBox_cognome_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !(char.IsLetter(e.KeyChar) || e.KeyChar == (char)Keys.Back);
+        }
+
+        private void textBox_nome_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !(char.IsLetter(e.KeyChar) || e.KeyChar == (char)Keys.Back);
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            string line;
+            StreamReader file = new StreamReader("comuni.txt");
+            line = file.ReadLine();
+            while (line != null)
+            {
+                lista_comuni.Items.Add(line);
+                line = file.ReadLine();
+            }
+            file.Close();
+            lista_comuni.Sorted = true;
         }
     }
 }

@@ -39,7 +39,7 @@
             this.Elenco_ospiti.ItemHeight = 15;
             this.Elenco_ospiti.Location = new System.Drawing.Point(103, 12);
             this.Elenco_ospiti.Name = "Elenco_ospiti";
-            this.Elenco_ospiti.Size = new System.Drawing.Size(253, 244);
+            this.Elenco_ospiti.Size = new System.Drawing.Size(453, 244);
             this.Elenco_ospiti.TabIndex = 0;
             // 
             // avvio_btn
@@ -56,9 +56,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(559, 386);
+            this.ClientSize = new System.Drawing.Size(568, 266);
             this.Controls.Add(this.avvio_btn);
             this.Controls.Add(this.Elenco_ospiti);
+            this.MinimumSize = new System.Drawing.Size(584, 305);
             this.Name = "Server";
             this.Text = "Server";
             this.Load += new System.EventHandler(this.Server_Load);
